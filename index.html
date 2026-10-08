@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southeast Asia | Nickname Atlas</title>
+
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Clarity+City:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<!-- PyScript -->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://pyscript.net/releases/2024.3.1/core.css" />
+<script type="module" src="https://pyscript.net/releases/2024.3.1/core.js"></script>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="batik-pattern"></div>
+  <div class="position-relative">
+    <h1>The <em>Nickname</em><br>Atlas of Southeast Asia</h1>
+    <p class="lede"> Type a country below to see what its nickname is.</p>
+  </div>
+</section>
+
+<!--  Finder  -->
+
+  <div class="finder-card">
+
+    <span class="finder-label">Country Lookup</span>
+    <h2>Enter a Southeast Asian country</h2>
+    <input type="text" id="country_input" class="form-control sea-input" placeholder="e.g. Philippines, Vietnam…">
+
+    <button type="button" class="btn btn-sea" py-click="get_nickname">Find Nickname</button>
+
+    <div id="output1"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer"></div>
+  Seatwork 1 · 2nd Quarter F · 11 nations of Southeast Asia
+</footer>
+
+<py-script src="main.py"></py-script>
+
+</body>
+</html>

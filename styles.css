@@ -1,0 +1,200 @@
+/* ==========================================================
+   Nickname Atlas of Southeast Asia
+   Palette:
+   --mint     #c9e4ca  light mint / sage
+   --seafoam  #87bba2  soft sage / seafoam
+   --teal     #55828b  muted teal
+   --slate    #3b6064  dark slate teal
+   --navy     #364958  deep navy-slate
+   ========================================================== */
+
+:root {
+  --mint: #c9e4ca;
+  --seafoam: #87bba2;
+  --teal: #55828b;
+  --slate: #3b6064;
+  --navy: #364958;
+
+  --font-display: "Abril Fatface", Georgia, serif;
+  --font-body: "Clarity City", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ---------- Base ---------- */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  color: var(--navy);
+  background: var(--mint);
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 1.5rem 7rem;
+  text-align: center;
+  color: var(--mint);
+  background: linear-gradient(160deg, var(--navy) 0%, var(--slate) 60%, var(--teal) 100%);
+}
+
+.hero h1 {
+  font-size: clamp(2.25rem, 6vw, 4.25rem);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  color: #fff;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--seafoam);
+}
+
+.hero .lede {
+  max-width: 34rem;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: var(--mint);
+  opacity: 0.92;
+}
+
+/* Subtle repeating diamond motif, batik-inspired */
+.batik-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  pointer-events: none;
+  background-image:
+    linear-gradient(45deg, var(--mint) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--mint) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--mint) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--mint) 75%);
+  background-size: 48px 48px;
+  background-position: 0 0, 0 24px, 24px -24px, -24px 0;
+}
+
+/* ---------- Finder card ---------- */
+.finder-card {
+  position: relative;
+  width: min(92%, 36rem);
+  margin: -3.5rem auto 3rem;
+  padding: 2rem 2rem 2.25rem;
+  background: #fff;
+  border: 2px solid var(--seafoam);
+  border-radius: 1rem;
+  box-shadow: 0 12px 32px rgba(54, 73, 88, 0.18);
+}
+
+.finder-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--slate);
+  background: var(--mint);
+  border-radius: 999px;
+}
+
+.finder-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+  color: var(--navy);
+}
+
+/* ---------- Input ---------- */
+.sea-input {
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  color: var(--navy);
+  background: #f7fbf7;
+  border: 2px solid var(--seafoam);
+  border-radius: 0.6rem;
+}
+
+.sea-input::placeholder {
+  color: var(--teal);
+  opacity: 0.7;
+}
+
+.sea-input:focus {
+  color: var(--navy);
+  background: #fff;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 0.25rem rgba(85, 130, 139, 0.3);
+  outline: none;
+}
+
+/* ---------- Button ---------- */
+.btn-sea {
+  margin-top: 1rem;
+  padding: 0.7rem 1.75rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--slate);
+  border: 2px solid var(--slate);
+  border-radius: 0.6rem;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.btn-sea:hover {
+  color: var(--navy);
+  background: var(--seafoam);
+  border-color: var(--seafoam);
+}
+
+.btn-sea:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+
+.btn-sea:active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+/* ---------- Output ---------- */
+#output1 {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+
+#output1:not(:empty) {
+  padding: 1rem 1.25rem;
+  background: var(--mint);
+  border-left: 5px solid var(--teal);
+  border-radius: 0.5rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: auto;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--mint);
+  background: var(--navy);
+}
+
+/* ---------- Small screens & motion ---------- */
+@media (max-width: 576px) {
+  .hero { padding: 3.5rem 1.25rem 6rem; }
+  .finder-card { padding: 1.5rem 1.25rem 1.75rem; }
+  .btn-sea { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
